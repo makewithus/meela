@@ -195,7 +195,7 @@ const Footer = () => {
         <div className="mt-8 pt-5 border-t border-[#6f4a3c]/20 text-center">
           <p className="text-[10px] md:text-xs text-[#6f4a3c]/60">
             © 2025 MEELA, Herbland Cosmetics and Manufacturers. All rights reserved.
-            Developed by <a href="https://makewithus.in" target="_blank">makewithus</a>
+            Developed by <a href="https://makewithus.in" target="_blank">MAKEWITHUS</a>
 
           </p>
 
