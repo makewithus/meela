@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if user is authenticated
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    // Orders collection
+    match /orders/{orderId} {
+      // Allow anyone to create orders (customer checkout)
+      allow create: if true;
+      // Restrict read, update, and delete to authenticated admin users
+      allow read, update, delete: if isAdmin();
+    }
+    
+    // Newsletter collection
+    match /newsletter/{subscriptionId} {
+      // Allow anyone to subscribe
+      allow create: if true;
+      // Restrict read, update, and delete to authenticated admin users
+      allow read, update, delete: if isAdmin();
+    }
+    
+    // Contacts collection
+    match /contacts/{contactId} {
+      // Allow anyone to submit contact forms
+      allow create: if true;
+      // Restrict read, update, and delete to authenticated admin users
+      allow read, update, delete: if isAdmin();
+    }
+    
+    // Coupons collection
+    match /coupons/{couponId} {
+      // Allow everyone to read coupons (to validate on checkout)
+      allow read: if true;
+      // Restrict management to authenticated admin users
+      allow create, update, delete: if isAdmin();
+    }
+    
+    // Blogs collection
+    match /blogs/{blogId} {
+      // Allow everyone to read blogs
+      allow read: if true;
+      // Restrict editing and deleting to authenticated admin users
+      allow create, update, delete: if isAdmin();
+    }
+  }
+}
+

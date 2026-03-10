@@ -1,0 +1,10 @@
+# SPA routing - redirect all requests to index.html for client-side routing
+# This ensures /admin and other routes work properly
+
+# Admin route specifically
+/admin /index.html 200
+/admin/* /index.html 200
+
+# All other routes (except static assets)
+/* /index.html 200
+

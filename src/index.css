@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-coffee: #6f4a3c;
+  --color-coffee-light: #b8866a;
+  --color-cream: #f7efe6;
+  
+  --font-family-serif: "Playfair Display", serif;
+  --font-family-sans: "Poppins", system-ui, sans-serif;
+  
+  --animate-marquee: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  height: 100%;
+  background-color: var(--color-cream);
+  color: var(--color-coffee);
+  font-family: var(--font-family-sans);
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c79f82;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b88a6d;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c79f82 transparent;
+}
+
+/* Loader styles */
+.loader-backdrop {
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+}
+
+/* Ensure loader is on top of everything */
+[style*="z-index: 9999"] {
+  isolation: isolate;
+}
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://meela-omega.vercel.app</loc>
+    <lastmod>2025-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://meela-omega.vercel.app/cart.webp</image:loc>
+      <image:title>Meela Ayurvedic Hair Growth Oil</image:title>
+      <image:caption>Natural hair oil made with 65+ powerful herbs</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Add more URLs as needed when you add more pages -->
+  
+</urlset>
+

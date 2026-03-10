@@ -1,0 +1,28 @@
+{
+  "name": "Meela Ayurvedic Hair Growth Oil",
+  "short_name": "Meela",
+  "description": "Natural Ayurvedic hair oil made with 65+ powerful herbs for healthy hair growth",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7efe6",
+  "theme_color": "#6f4a3c",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/footer-logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/footer-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["beauty", "health", "shopping"],
+  "lang": "en",
+  "dir": "ltr"
+}
+
