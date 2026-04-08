@@ -754,10 +754,10 @@ const Admin = () => {
   // Show loading screen while checking auth
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-cream to-[#f5e6d3] flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-cream to-[#f5e6d3] flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#6f4a3c]"></div>
-          <p className="mt-4 text-[#6f4a3c]/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-coffee"></div>
+          <p className="mt-4 text-coffee/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
             Loading...
           </p>
         </div>
@@ -784,7 +784,7 @@ const Admin = () => {
               className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative overflow-hidden"
             >
               {/* Decorative background */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#6f4a3c]/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-coffee/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-cream/50 rounded-full translate-y-1/2 -translate-x-1/2"></div>
 
               {/* Content */}
@@ -794,7 +794,7 @@ const Admin = () => {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                    className="w-20 h-20 bg-gradient-to-br from-[#6f4a3c] to-[#8b6254] rounded-2xl flex items-center justify-center mx-auto mb-4"
+                    className="w-20 h-20 bg-linear-to-br from-coffee to-[#8b6254] rounded-2xl flex items-center justify-center mx-auto mb-4"
                   >
                     <svg
                       className="w-10 h-10 text-white"
@@ -811,13 +811,13 @@ const Admin = () => {
                     </svg>
                   </motion.div>
                   <h2
-                    className="text-3xl font-bold text-[#6f4a3c] mb-2"
+                    className="text-3xl font-bold text-coffee mb-2"
                     style={{ fontFamily: '"Playfair Display", serif' }}
                   >
                     Admin Login
                   </h2>
                   <p
-                    className="text-[#6f4a3c]/70 text-sm"
+                    className="text-coffee/70 text-sm"
                     style={{ fontFamily: '"Poppins", sans-serif' }}
                   >
                     Please sign in to access the dashboard
@@ -839,7 +839,7 @@ const Admin = () => {
 
                   <div>
                     <label
-                      className="block text-sm font-semibold text-[#6f4a3c] mb-2"
+                      className="block text-sm font-semibold text-coffee mb-2"
                       style={{ fontFamily: '"Poppins", sans-serif' }}
                     >
                       Email Address
@@ -849,7 +849,7 @@ const Admin = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="w-full px-4 py-3 rounded-xl border-2 border-[#6f4a3c]/20 focus:border-[#6f4a3c] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-coffee/20 focus:border-coffee focus:outline-none transition-colors"
                       placeholder="admin@example.com"
                       style={{ fontFamily: '"Poppins", sans-serif' }}
                     />
@@ -857,7 +857,7 @@ const Admin = () => {
 
                   <div>
                     <label
-                      className="block text-sm font-semibold text-[#6f4a3c] mb-2"
+                      className="block text-sm font-semibold text-coffee mb-2"
                       style={{ fontFamily: '"Poppins", sans-serif' }}
                     >
                       Password
@@ -868,7 +868,7 @@ const Admin = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        className="w-full px-4 py-3 rounded-xl border-2 border-[#6f4a3c]/20 focus:border-[#6f4a3c] focus:outline-none transition-colors [&::-ms-reveal]:hidden [&::-ms-clear]:hidden"
+                        className="w-full px-4 py-3 rounded-xl border-2 border-coffee/20 focus:border-coffee focus:outline-none transition-colors [&::-ms-reveal]:hidden [&::-ms-clear]:hidden"
                         placeholder="••••••••"
                         style={{ fontFamily: '"Poppins", sans-serif', paddingRight: password ? '3rem' : '1rem' }}
                       />
@@ -876,7 +876,7 @@ const Admin = () => {
                         <button
                           type="button"
                           onClick={() => setShowPassword(!showPassword)}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6f4a3c]/50 hover:text-[#6f4a3c] transition-colors p-1 focus:outline-none"
+                          className="absolute right-3 top-1/2 -translate-y-1/2 text-coffee/50 hover:text-coffee transition-colors p-1 focus:outline-none"
                           aria-label={showPassword ? "Hide password" : "Show password"}
                         >
                           {showPassword ? (
@@ -922,7 +922,7 @@ const Admin = () => {
                   <button
                     type="submit"
                     disabled={isLoggingIn}
-                    className="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-[#6f4a3c] to-[#8b6254] text-white font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full py-3 px-6 rounded-xl bg-linear-to-r from-coffee to-[#8b6254] text-white font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     style={{ fontFamily: '"Poppins", sans-serif' }}
                   >
                     {isLoggingIn ? (
@@ -937,7 +937,7 @@ const Admin = () => {
                 </form>
 
                 <div className="mt-6 text-center">
-                  <p className="text-xs text-[#6f4a3c]/50" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                  <p className="text-xs text-coffee/50" style={{ fontFamily: '"Poppins", sans-serif' }}>
                     Protected by Firebase Authentication
                   </p>
                 </div>
@@ -950,7 +950,7 @@ const Admin = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cream to-[#f5e6d3] pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:px-12">
+    <div className="min-h-screen bg-linear-to-br from-cream to-[#f5e6d3] pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -960,13 +960,13 @@ const Admin = () => {
         >
           <div>
             <h1
-              className="text-3xl sm:text-4xl md:text-5xl text-[#6f4a3c] mb-2"
+              className="text-3xl sm:text-4xl md:text-5xl text-coffee mb-2"
               style={{ fontFamily: '"Playfair Display", serif', fontWeight: 700 }}
             >
               Admin Dashboard
             </h1>
             <p
-              className="text-sm sm:text-base text-[#6f4a3c]/70"
+              className="text-sm sm:text-base text-coffee/70"
               style={{ fontFamily: '"Poppins", sans-serif' }}
             >
               Manage orders, newsletter subscribers, and contact submissions
@@ -975,7 +975,7 @@ const Admin = () => {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 px-4 py-2 bg-white/50 rounded-lg">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm text-[#6f4a3c]" style={{ fontFamily: '"Poppins", sans-serif' }}>
+              <span className="text-sm text-coffee" style={{ fontFamily: '"Poppins", sans-serif' }}>
                 {user?.email}
               </span>
             </div>
@@ -990,14 +990,14 @@ const Admin = () => {
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 border-b border-[#6f4a3c]/20">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 border-b border-coffee/20">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => handleTabChange(tab.id)}
               className={`px-4 sm:px-6 py-2 sm:py-3 rounded-t-lg font-semibold transition-all relative ${activeTab === tab.id
-                  ? "bg-[#6f4a3c] text-white"
-                  : "bg-white/50 text-[#6f4a3c] hover:bg-white/80"
+                  ? "bg-coffee text-white"
+                  : "bg-white/50 text-coffee hover:bg-white/80"
                 }`}
               style={{ fontFamily: '"Poppins", sans-serif' }}
             >
@@ -1006,7 +1006,7 @@ const Admin = () => {
                 <span
                   className={`ml-2 px-2 py-0.5 rounded-full text-xs ${activeTab === tab.id
                       ? "bg-white/20 text-white"
-                      : "bg-[#6f4a3c]/20 text-[#6f4a3c]"
+                      : "bg-coffee/20 text-coffee"
                     }`}
                 >
                   {tab.count}
@@ -1025,7 +1025,7 @@ const Admin = () => {
           >
             {/* Delete Mode Controls */}
             {!loading.orders && orders.length > 0 && (
-              <div className="p-4 bg-cream/30 border-b border-[#6f4a3c]/20 flex flex-wrap items-center justify-between gap-3">
+              <div className="p-4 bg-cream/30 border-b border-coffee/20 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <button
                     onClick={toggleDeleteMode}
@@ -1041,14 +1041,14 @@ const Admin = () => {
                     <>
                       <button
                         onClick={selectAllItems}
-                        className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                        className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Select All
                       </button>
                       <button
                         onClick={deselectAllItems}
-                        className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                        className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Deselect All
@@ -1077,15 +1077,15 @@ const Admin = () => {
             )}
             {loading.orders ? (
               <div className="p-12 text-center">
-                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#6f4a3c]"></div>
-                <p className="mt-4 text-[#6f4a3c]/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-coffee"></div>
+                <p className="mt-4 text-coffee/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
                   Loading orders...
                 </p>
               </div>
             ) : (
               <div className="overflow-x-auto">
                 <table className="min-w-full">
-                  <thead className="bg-[#6f4a3c] text-white">
+                  <thead className="bg-coffee text-white">
                     <tr>
                       {deleteMode && (
                         <th className="px-4 py-3 sm:px-6 sm:py-4 text-left text-xs sm:text-sm font-semibold">
@@ -1114,7 +1114,7 @@ const Admin = () => {
                   <tbody className="divide-y divide-gray-200">
                     {paginatedOrders.length === 0 ? (
                       <tr>
-                        <td colSpan={deleteMode ? "7" : "6"} className="px-6 py-12 text-center text-[#6f4a3c]/60">
+                        <td colSpan={deleteMode ? "7" : "6"} className="px-6 py-12 text-center text-coffee/60">
                           <p style={{ fontFamily: '"Poppins", sans-serif' }}>No orders yet.</p>
                         </td>
                       </tr>
@@ -1136,27 +1136,27 @@ const Admin = () => {
                               </td>
                             )}
                             <td className="px-4 py-3 sm:px-6 sm:py-4">
-                              <div className="text-xs sm:text-sm font-mono text-[#6f4a3c]">
+                              <div className="text-xs sm:text-sm font-mono text-coffee">
                                 {order.id.slice(0, 8)}...
                               </div>
                             </td>
                             <td className="px-4 py-3 sm:px-6 sm:py-4">
-                              <div className="text-xs sm:text-sm font-semibold text-[#6f4a3c]">
+                              <div className="text-xs sm:text-sm font-semibold text-coffee">
                                 {order.deliveryAddress?.name || "N/A"}
                               </div>
-                              <div className="text-xs text-[#6f4a3c]/70 mt-1">
+                              <div className="text-xs text-coffee/70 mt-1">
                                 {order.deliveryAddress?.email || ""}
                               </div>
-                              <div className="text-xs text-[#6f4a3c]/70">
+                              <div className="text-xs text-coffee/70">
                                 {order.deliveryAddress?.phone || ""}
                               </div>
                             </td>
                             <td className="px-4 py-3 sm:px-6 sm:py-4">
-                              <div className="text-xs sm:text-sm text-[#6f4a3c]">
+                              <div className="text-xs sm:text-sm text-coffee">
                                 {order.totalItems || order.items?.length || 0} item(s)
                               </div>
                               <button
-                                className="text-xs text-[#6f4a3c]/60 hover:text-[#6f4a3c] mt-1 underline"
+                                className="text-xs text-coffee/60 hover:text-coffee mt-1 underline"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   setExpandedOrder(expandedOrder === order.id ? null : order.id);
@@ -1166,17 +1166,17 @@ const Admin = () => {
                               </button>
                             </td>
                             <td className="px-4 py-3 sm:px-6 sm:py-4">
-                              <div className="text-xs sm:text-sm font-semibold text-[#6f4a3c]">
+                              <div className="text-xs sm:text-sm font-semibold text-coffee">
                                 {order.pricing?.currency || "AED"} {order.pricing?.total?.toFixed(2) || order.total?.toFixed(2) || "0.00"}
                               </div>
                             </td>
                             <td className="px-4 py-3 sm:px-6 sm:py-4">
-                              <div className="text-xs text-[#6f4a3c]/70">
+                              <div className="text-xs text-coffee/70">
                                 {order.createdAt?.toDate
                                   ? order.createdAt.toDate().toLocaleDateString()
                                   : "N/A"}
                               </div>
-                              <div className="text-xs text-[#6f4a3c]/60">
+                              <div className="text-xs text-coffee/60">
                                 {order.createdAt?.toDate
                                   ? order.createdAt.toDate().toLocaleTimeString()
                                   : ""}
@@ -1205,12 +1205,12 @@ const Admin = () => {
                                   {/* Delivery Address */}
                                   <div>
                                     <h4
-                                      className="text-sm sm:text-base font-semibold text-[#6f4a3c] mb-2"
+                                      className="text-sm sm:text-base font-semibold text-coffee mb-2"
                                       style={{ fontFamily: '"Poppins", sans-serif' }}
                                     >
                                       Delivery Address
                                     </h4>
-                                    <div className="text-xs sm:text-sm text-[#6f4a3c]/80 space-y-1">
+                                    <div className="text-xs sm:text-sm text-coffee/80 space-y-1">
                                       <p>{order.deliveryAddress?.name}</p>
                                       <p>{order.deliveryAddress?.landmark1}</p>
                                       <p>{order.deliveryAddress?.landmark2}</p>
@@ -1222,7 +1222,7 @@ const Admin = () => {
                                   {/* Order Items */}
                                   <div>
                                     <h4
-                                      className="text-sm sm:text-base font-semibold text-[#6f4a3c] mb-2"
+                                      className="text-sm sm:text-base font-semibold text-coffee mb-2"
                                       style={{ fontFamily: '"Poppins", sans-serif' }}
                                     >
                                       Order Items
@@ -1231,7 +1231,7 @@ const Admin = () => {
                                       {order.items?.map((item, idx) => (
                                         <div
                                           key={idx}
-                                          className="flex justify-between text-xs sm:text-sm text-[#6f4a3c]/80 bg-white/50 p-2 rounded"
+                                          className="flex justify-between text-xs sm:text-sm text-coffee/80 bg-white/50 p-2 rounded"
                                         >
                                           <span>
                                             {item.name} × {item.quantity}
@@ -1242,13 +1242,13 @@ const Admin = () => {
                                         </div>
                                       ))}
                                     </div>
-                                    <div className="mt-3 pt-3 border-t border-[#6f4a3c]/20">
-                                      <div className="flex justify-between text-xs sm:text-sm text-[#6f4a3c]">
+                                    <div className="mt-3 pt-3 border-t border-coffee/20">
+                                      <div className="flex justify-between text-xs sm:text-sm text-coffee">
                                         <span>Subtotal:</span>
                                         <span>{order.pricing?.currency || "AED"} {order.pricing?.subtotal?.toFixed(2) || "0.00"}</span>
                                       </div>
                                       {order.pricing?.vatAmount > 0 && (
-                                        <div className="flex justify-between text-xs sm:text-sm text-[#6f4a3c]">
+                                        <div className="flex justify-between text-xs sm:text-sm text-coffee">
                                           <span>VAT (5%):</span>
                                           <span>{order.pricing?.currency || "AED"} {order.pricing?.vatAmount?.toFixed(2) || "0.00"}</span>
                                         </div>
@@ -1259,7 +1259,7 @@ const Admin = () => {
                                           <span>-{order.pricing?.currency || "AED"} {order.pricing?.discount?.toFixed(2)}</span>
                                         </div>
                                       )}
-                                      <div className="flex justify-between text-sm sm:text-base font-semibold text-[#6f4a3c] mt-1">
+                                      <div className="flex justify-between text-sm sm:text-base font-semibold text-coffee mt-1">
                                         <span>Total:</span>
                                         <span>{order.pricing?.currency || "AED"} {order.pricing?.total?.toFixed(2) || "0.00"}</span>
                                       </div>
@@ -1284,13 +1284,13 @@ const Admin = () => {
                   {/* Left: Items per page & showing info */}
                   <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
                     <div className="flex items-center gap-2">
-                      <label className="text-sm text-[#6f4a3c]/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <label className="text-sm text-coffee/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Show:
                       </label>
                       <select
                         value={itemsPerPage.orders}
                         onChange={(e) => handleItemsPerPageChange(e.target.value)}
-                        className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#6f4a3c]/20"
+                        className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-coffee/20"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         <option value="5">5</option>
@@ -1298,7 +1298,7 @@ const Admin = () => {
                         <option value="20">20</option>
                       </select>
                     </div>
-                    <div className="text-sm text-[#6f4a3c]/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                    <div className="text-sm text-coffee/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
                       Showing {orders.length === 0 ? 0 : (currentPage.orders - 1) * itemsPerPage.orders + 1} to {Math.min(currentPage.orders * itemsPerPage.orders, orders.length)} of {orders.length} orders
                     </div>
                   </div>
@@ -1308,7 +1308,7 @@ const Admin = () => {
                     <button
                       onClick={() => setCurrentPage(prev => ({ ...prev, orders: Math.max(1, prev.orders - 1) }))}
                       disabled={currentPage.orders === 1}
-                      className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                      className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                       style={{ fontFamily: '"Poppins", sans-serif' }}
                     >
                       Previous
@@ -1332,8 +1332,8 @@ const Admin = () => {
                             key={pageNum}
                             onClick={() => setCurrentPage(prev => ({ ...prev, orders: pageNum }))}
                             className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${currentPage.orders === pageNum
-                                ? "bg-[#6f4a3c] text-white"
-                                : "border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10"
+                                ? "bg-coffee text-white"
+                                : "border border-coffee/30 text-coffee hover:bg-coffee/10"
                               }`}
                             style={{ fontFamily: '"Poppins", sans-serif' }}
                           >
@@ -1346,7 +1346,7 @@ const Admin = () => {
                     <button
                       onClick={() => setCurrentPage(prev => ({ ...prev, orders: Math.min(totalPagesOrders, prev.orders + 1) }))}
                       disabled={currentPage.orders === totalPagesOrders}
-                      className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                      className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                       style={{ fontFamily: '"Poppins", sans-serif' }}
                     >
                       Next
@@ -1367,13 +1367,13 @@ const Admin = () => {
           >
             {/* Delete Mode Controls */}
             {!loading.newsletter && newsletters.length > 0 && (
-              <div className="p-4 bg-cream/30 border-b border-[#6f4a3c]/20 flex flex-wrap items-center justify-between gap-3">
+              <div className="p-4 bg-cream/30 border-b border-coffee/20 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <button
                     onClick={toggleDeleteMode}
                     className={`px-4 py-2 rounded-lg font-semibold transition-all ${deleteMode
                         ? "bg-red-500 text-white hover:bg-red-600"
-                        : "bg-[#6f4a3c] text-white hover:bg-[#6f4a3c]/90"
+                        : "bg-coffee text-white hover:bg-coffee/90"
                       }`}
                     style={{ fontFamily: '"Poppins", sans-serif' }}
                   >
@@ -1383,14 +1383,14 @@ const Admin = () => {
                     <>
                       <button
                         onClick={selectAllItems}
-                        className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                        className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Select All
                       </button>
                       <button
                         onClick={deselectAllItems}
-                        className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                        className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Deselect All
@@ -1412,7 +1412,7 @@ const Admin = () => {
             )}
             <div className="p-4 sm:p-6">
               <h2
-                className="text-xl sm:text-2xl font-semibold text-[#6f4a3c] mb-4"
+                className="text-xl sm:text-2xl font-semibold text-coffee mb-4"
                 style={{ fontFamily: '"Playfair Display", serif' }}
               >
                 Newsletter Subscribers ({newsletters.length})
@@ -1426,13 +1426,13 @@ const Admin = () => {
               )}
               {loading.newsletter ? (
                 <div className="py-12 text-center">
-                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#6f4a3c]"></div>
-                  <p className="mt-4 text-[#6f4a3c]/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-coffee"></div>
+                  <p className="mt-4 text-coffee/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
                     Loading subscribers...
                   </p>
                 </div>
               ) : paginatedNewsletters.length === 0 ? (
-                <p className="text-center py-12 text-[#6f4a3c]/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                <p className="text-center py-12 text-coffee/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
                   No newsletter subscribers yet.
                 </p>
               ) : (
@@ -1441,7 +1441,7 @@ const Admin = () => {
                     {paginatedNewsletters.map((sub) => (
                       <div
                         key={sub.id}
-                        className={`p-3 sm:p-4 bg-cream/50 rounded-lg border border-[#6f4a3c]/20 hover:shadow-md transition-shadow ${selectedItems.includes(sub.id) ? 'ring-2 ring-blue-500 bg-blue-50' : ''
+                        className={`p-3 sm:p-4 bg-cream/50 rounded-lg border border-coffee/20 hover:shadow-md transition-shadow ${selectedItems.includes(sub.id) ? 'ring-2 ring-blue-500 bg-blue-50' : ''
                           }`}
                       >
                         <div className="flex items-start justify-between gap-3">
@@ -1450,14 +1450,14 @@ const Admin = () => {
                               type="checkbox"
                               checked={selectedItems.includes(sub.id)}
                               onChange={() => toggleSelectItem(sub.id)}
-                              className="w-4 h-4 cursor-pointer mt-1 flex-shrink-0"
+                              className="w-4 h-4 cursor-pointer mt-1 shrink-0"
                             />
                           )}
                           <div className="flex-1">
-                            <div className="text-sm sm:text-base font-semibold text-[#6f4a3c] mb-1">
+                            <div className="text-sm sm:text-base font-semibold text-coffee mb-1">
                               {sub.email}
                             </div>
-                            <div className="text-xs text-[#6f4a3c]/60">
+                            <div className="text-xs text-coffee/60">
                               Subscribed: {sub.subscribedAt?.toDate
                                 ? sub.subscribedAt.toDate().toLocaleDateString()
                                 : "N/A"}
@@ -1487,13 +1487,13 @@ const Admin = () => {
                     {/* Left: Items per page & showing info */}
                     <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
                       <div className="flex items-center gap-2">
-                        <label className="text-sm text-[#6f4a3c]/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="text-sm text-coffee/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Show:
                         </label>
                         <select
                           value={itemsPerPage.newsletter}
                           onChange={(e) => handleItemsPerPageChange(e.target.value)}
-                          className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#6f4a3c]/20"
+                          className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-coffee/20"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         >
                           <option value="5">5</option>
@@ -1501,7 +1501,7 @@ const Admin = () => {
                           <option value="20">20</option>
                         </select>
                       </div>
-                      <div className="text-sm text-[#6f4a3c]/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <div className="text-sm text-coffee/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Showing {newsletters.length === 0 ? 0 : (currentPage.newsletter - 1) * itemsPerPage.newsletter + 1} to {Math.min(currentPage.newsletter * itemsPerPage.newsletter, newsletters.length)} of {newsletters.length} subscribers
                       </div>
                     </div>
@@ -1511,7 +1511,7 @@ const Admin = () => {
                       <button
                         onClick={() => setCurrentPage(prev => ({ ...prev, newsletter: Math.max(1, prev.newsletter - 1) }))}
                         disabled={currentPage.newsletter === 1}
-                        className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Previous
@@ -1535,8 +1535,8 @@ const Admin = () => {
                               key={pageNum}
                               onClick={() => setCurrentPage(prev => ({ ...prev, newsletter: pageNum }))}
                               className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${currentPage.newsletter === pageNum
-                                  ? "bg-[#6f4a3c] text-white"
-                                  : "border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10"
+                                  ? "bg-coffee text-white"
+                                  : "border border-coffee/30 text-coffee hover:bg-coffee/10"
                                 }`}
                               style={{ fontFamily: '"Poppins", sans-serif' }}
                             >
@@ -1549,7 +1549,7 @@ const Admin = () => {
                       <button
                         onClick={() => setCurrentPage(prev => ({ ...prev, newsletter: Math.min(totalPagesNewsletters, prev.newsletter + 1) }))}
                         disabled={currentPage.newsletter === totalPagesNewsletters}
-                        className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Next
@@ -1571,13 +1571,13 @@ const Admin = () => {
           >
             {/* Delete Mode Controls */}
             {!loading.contacts && contacts.length > 0 && (
-              <div className="p-4 bg-cream/30 border-b border-[#6f4a3c]/20 flex flex-wrap items-center justify-between gap-3">
+              <div className="p-4 bg-cream/30 border-b border-coffee/20 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <button
                     onClick={toggleDeleteMode}
                     className={`px-4 py-2 rounded-lg font-semibold transition-all ${deleteMode
                         ? "bg-red-500 text-white hover:bg-red-600"
-                        : "bg-[#6f4a3c] text-white hover:bg-[#6f4a3c]/90"
+                        : "bg-coffee text-white hover:bg-coffee/90"
                       }`}
                     style={{ fontFamily: '"Poppins", sans-serif' }}
                   >
@@ -1587,14 +1587,14 @@ const Admin = () => {
                     <>
                       <button
                         onClick={selectAllItems}
-                        className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                        className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Select All
                       </button>
                       <button
                         onClick={deselectAllItems}
-                        className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                        className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Deselect All
@@ -1616,7 +1616,7 @@ const Admin = () => {
             )}
             <div className="p-4 sm:p-6">
               <h2
-                className="text-xl sm:text-2xl font-semibold text-[#6f4a3c] mb-4"
+                className="text-xl sm:text-2xl font-semibold text-coffee mb-4"
                 style={{ fontFamily: '"Playfair Display", serif' }}
               >
                 Contact Submissions ({contacts.length})
@@ -1630,13 +1630,13 @@ const Admin = () => {
               )}
               {loading.contacts ? (
                 <div className="py-12 text-center">
-                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#6f4a3c]"></div>
-                  <p className="mt-4 text-[#6f4a3c]/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-coffee"></div>
+                  <p className="mt-4 text-coffee/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
                     Loading contacts...
                   </p>
                 </div>
               ) : paginatedContacts.length === 0 ? (
-                <p className="text-center py-12 text-[#6f4a3c]/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                <p className="text-center py-12 text-coffee/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
                   No contact submissions yet.
                 </p>
               ) : (
@@ -1645,7 +1645,7 @@ const Admin = () => {
                     {paginatedContacts.map((contact) => (
                       <div
                         key={contact.id}
-                        className={`p-4 sm:p-5 bg-cream/50 rounded-lg border border-[#6f4a3c]/20 hover:shadow-md transition-shadow ${selectedItems.includes(contact.id) ? 'ring-2 ring-blue-500 bg-blue-50' : ''
+                        className={`p-4 sm:p-5 bg-cream/50 rounded-lg border border-coffee/20 hover:shadow-md transition-shadow ${selectedItems.includes(contact.id) ? 'ring-2 ring-blue-500 bg-blue-50' : ''
                           }`}
                       >
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
@@ -1654,13 +1654,13 @@ const Admin = () => {
                               type="checkbox"
                               checked={selectedItems.includes(contact.id)}
                               onChange={() => toggleSelectItem(contact.id)}
-                              className="w-4 h-4 cursor-pointer mt-1 flex-shrink-0"
+                              className="w-4 h-4 cursor-pointer mt-1 shrink-0"
                             />
                           )}
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-2">
                               <h3
-                                className="text-base sm:text-lg font-semibold text-[#6f4a3c]"
+                                className="text-base sm:text-lg font-semibold text-coffee"
                                 style={{ fontFamily: '"Poppins", sans-serif' }}
                               >
                                 {contact.name?.full || `${contact.name?.first || ""} ${contact.name?.last || ""}`.trim() || "Anonymous"}
@@ -1674,7 +1674,7 @@ const Admin = () => {
                                 {contact.status || "new"}
                               </span>
                             </div>
-                            <div className="space-y-1 text-sm text-[#6f4a3c]/80">
+                            <div className="space-y-1 text-sm text-coffee/80">
                               <p>
                                 <span className="font-semibold">Email:</span> {contact.email}
                               </p>
@@ -1684,11 +1684,11 @@ const Admin = () => {
                               <p className="mt-2">
                                 <span className="font-semibold">Message:</span>
                               </p>
-                              <p className="text-[#6f4a3c]/70 bg-white/50 p-2 rounded">
+                              <p className="text-coffee/70 bg-white/50 p-2 rounded">
                                 {contact.message}
                               </p>
                             </div>
-                            <div className="mt-3 text-xs text-[#6f4a3c]/60">
+                            <div className="mt-3 text-xs text-coffee/60">
                               Submitted: {contact.submittedAt?.toDate
                                 ? contact.submittedAt.toDate().toLocaleString()
                                 : "N/A"}
@@ -1708,13 +1708,13 @@ const Admin = () => {
                     {/* Left: Items per page & showing info */}
                     <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
                       <div className="flex items-center gap-2">
-                        <label className="text-sm text-[#6f4a3c]/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="text-sm text-coffee/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Show:
                         </label>
                         <select
                           value={itemsPerPage.contacts}
                           onChange={(e) => handleItemsPerPageChange(e.target.value)}
-                          className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#6f4a3c]/20"
+                          className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-coffee/20"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         >
                           <option value="5">5</option>
@@ -1722,7 +1722,7 @@ const Admin = () => {
                           <option value="20">20</option>
                         </select>
                       </div>
-                      <div className="text-sm text-[#6f4a3c]/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <div className="text-sm text-coffee/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Showing {contacts.length === 0 ? 0 : (currentPage.contacts - 1) * itemsPerPage.contacts + 1} to {Math.min(currentPage.contacts * itemsPerPage.contacts, contacts.length)} of {contacts.length} contacts
                       </div>
                     </div>
@@ -1732,7 +1732,7 @@ const Admin = () => {
                       <button
                         onClick={() => setCurrentPage(prev => ({ ...prev, contacts: Math.max(1, prev.contacts - 1) }))}
                         disabled={currentPage.contacts === 1}
-                        className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Previous
@@ -1756,8 +1756,8 @@ const Admin = () => {
                               key={pageNum}
                               onClick={() => setCurrentPage(prev => ({ ...prev, contacts: pageNum }))}
                               className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${currentPage.contacts === pageNum
-                                  ? "bg-[#6f4a3c] text-white"
-                                  : "border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10"
+                                  ? "bg-coffee text-white"
+                                  : "border border-coffee/30 text-coffee hover:bg-coffee/10"
                                 }`}
                               style={{ fontFamily: '"Poppins", sans-serif' }}
                             >
@@ -1770,7 +1770,7 @@ const Admin = () => {
                       <button
                         onClick={() => setCurrentPage(prev => ({ ...prev, contacts: Math.min(totalPagesContacts, prev.contacts + 1) }))}
                         disabled={currentPage.contacts === totalPagesContacts}
-                        className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Next
@@ -1792,7 +1792,7 @@ const Admin = () => {
           >
             {/* Delete Mode Controls */}
             {!loading.coupons && coupons.length > 0 && (
-              <div className="p-4 bg-cream/30 border-b border-[#6f4a3c]/20 flex flex-wrap items-center justify-between gap-3">
+              <div className="p-4 bg-cream/30 border-b border-coffee/20 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <button
                     onClick={toggleDeleteMode}
@@ -1808,14 +1808,14 @@ const Admin = () => {
                     <>
                       <button
                         onClick={selectAllItems}
-                        className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                        className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Select All
                       </button>
                       <button
                         onClick={deselectAllItems}
-                        className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                        className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Deselect All
@@ -1836,7 +1836,7 @@ const Admin = () => {
                 {!deleteMode && (
                   <button
                     onClick={() => setShowCouponForm(true)}
-                    className="px-4 py-2 rounded-lg bg-[#6f4a3c] text-white font-semibold hover:bg-[#5a3b2f] transition-all"
+                    className="px-4 py-2 rounded-lg bg-coffee text-white font-semibold hover:bg-[#5a3b2f] transition-all"
                     style={{ fontFamily: '"Poppins", sans-serif' }}
                   >
                     + Add Coupon
@@ -1847,7 +1847,7 @@ const Admin = () => {
             <div className="p-4 sm:p-6">
               <div className="flex items-center justify-between mb-4">
                 <h2
-                  className="text-xl sm:text-2xl font-semibold text-[#6f4a3c]"
+                  className="text-xl sm:text-2xl font-semibold text-coffee"
                   style={{ fontFamily: '"Playfair Display", serif' }}
                 >
                   Coupons ({coupons.length})
@@ -1855,7 +1855,7 @@ const Admin = () => {
                 {!showCouponForm && (
                   <button
                     onClick={() => setShowCouponForm(true)}
-                    className="px-4 py-2 rounded-lg bg-[#6f4a3c] text-white font-semibold hover:bg-[#5a3b2f] transition-all text-sm"
+                    className="px-4 py-2 rounded-lg bg-coffee text-white font-semibold hover:bg-[#5a3b2f] transition-all text-sm"
                     style={{ fontFamily: '"Poppins", sans-serif' }}
                   >
                     + Add Coupon
@@ -1875,15 +1875,15 @@ const Admin = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 sm:p-6 bg-cream/30 rounded-lg border-2 border-[#6f4a3c]/20"
+                  className="mb-6 p-4 sm:p-6 bg-cream/30 rounded-lg border-2 border-coffee/20"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-[#6f4a3c]" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                    <h3 className="text-lg font-semibold text-coffee" style={{ fontFamily: '"Poppins", sans-serif' }}>
                       {editingCoupon ? "Edit Coupon" : "Create New Coupon"}
                     </h3>
                     <button
                       onClick={handleCancelCouponForm}
-                      className="text-[#6f4a3c] hover:text-[#5a3b2f] text-xl font-light"
+                      className="text-coffee hover:text-[#5a3b2f] text-xl font-light"
                     >
                       ×
                     </button>
@@ -1891,7 +1891,7 @@ const Admin = () => {
                   <form onSubmit={handleSaveCoupon} className="space-y-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Coupon Code *
                         </label>
                         <input
@@ -1901,12 +1901,12 @@ const Admin = () => {
                           onChange={handleCouponFormChange}
                           required
                           placeholder="SAVE10"
-                          className="w-full px-4 py-2 rounded-lg border-2 border-[#6f4a3c]/20 focus:border-[#6f4a3c] outline-none text-sm uppercase"
+                          className="w-full px-4 py-2 rounded-lg border-2 border-coffee/20 focus:border-coffee outline-none text-sm uppercase"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Discount Type *
                         </label>
                         <select
@@ -1914,7 +1914,7 @@ const Admin = () => {
                           value={couponForm.discountType}
                           onChange={handleCouponFormChange}
                           required
-                          className="w-full px-4 py-2 rounded-lg border-2 border-[#6f4a3c]/20 focus:border-[#6f4a3c] outline-none text-sm"
+                          className="w-full px-4 py-2 rounded-lg border-2 border-coffee/20 focus:border-coffee outline-none text-sm"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         >
                           <option value="percentage">Percentage (%)</option>
@@ -1922,7 +1922,7 @@ const Admin = () => {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Discount Value *
                         </label>
                         <input
@@ -1934,12 +1934,12 @@ const Admin = () => {
                           min="0"
                           step="0.01"
                           placeholder={couponForm.discountType === "percentage" ? "10" : "50"}
-                          className="w-full px-4 py-2 rounded-lg border-2 border-[#6f4a3c]/20 focus:border-[#6f4a3c] outline-none text-sm"
+                          className="w-full px-4 py-2 rounded-lg border-2 border-coffee/20 focus:border-coffee outline-none text-sm"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Expiry Date (Optional)
                         </label>
                         <input
@@ -1947,12 +1947,12 @@ const Admin = () => {
                           name="expiryDate"
                           value={couponForm.expiryDate}
                           onChange={handleCouponFormChange}
-                          className="w-full px-4 py-2 rounded-lg border-2 border-[#6f4a3c]/20 focus:border-[#6f4a3c] outline-none text-sm"
+                          className="w-full px-4 py-2 rounded-lg border-2 border-coffee/20 focus:border-coffee outline-none text-sm"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Usage Limit (Optional)
                         </label>
                         <input
@@ -1962,12 +1962,12 @@ const Admin = () => {
                           onChange={handleCouponFormChange}
                           min="1"
                           placeholder="100"
-                          className="w-full px-4 py-2 rounded-lg border-2 border-[#6f4a3c]/20 focus:border-[#6f4a3c] outline-none text-sm"
+                          className="w-full px-4 py-2 rounded-lg border-2 border-coffee/20 focus:border-coffee outline-none text-sm"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Used Count
                         </label>
                         <input
@@ -1976,7 +1976,7 @@ const Admin = () => {
                           value={couponForm.usedCount}
                           onChange={handleCouponFormChange}
                           min="0"
-                          className="w-full px-4 py-2 rounded-lg border-2 border-[#6f4a3c]/20 focus:border-[#6f4a3c] outline-none text-sm"
+                          className="w-full px-4 py-2 rounded-lg border-2 border-coffee/20 focus:border-coffee outline-none text-sm"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         />
                       </div>
@@ -1990,7 +1990,7 @@ const Admin = () => {
                         className="w-4 h-4"
                         style={{ accentColor: '#6f4a3c' }}
                       />
-                      <label className="text-sm font-semibold text-[#6f4a3c]" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <label className="text-sm font-semibold text-coffee" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Active
                       </label>
                     </div>
@@ -1998,7 +1998,7 @@ const Admin = () => {
                       <button
                         type="submit"
                         disabled={isSavingCoupon}
-                        className="px-6 py-2 rounded-lg bg-[#6f4a3c] text-white font-semibold hover:bg-[#5a3b2f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-6 py-2 rounded-lg bg-coffee text-white font-semibold hover:bg-[#5a3b2f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         {isSavingCoupon ? "Saving..." : editingCoupon ? "Update Coupon" : "Create Coupon"}
@@ -2006,7 +2006,7 @@ const Admin = () => {
                       <button
                         type="button"
                         onClick={handleCancelCouponForm}
-                        className="px-6 py-2 rounded-lg border-2 border-[#6f4a3c] text-[#6f4a3c] font-semibold hover:bg-[#6f4a3c]/10 transition-colors"
+                        className="px-6 py-2 rounded-lg border-2 border-coffee text-coffee font-semibold hover:bg-coffee/10 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Cancel
@@ -2018,20 +2018,20 @@ const Admin = () => {
 
               {loading.coupons ? (
                 <div className="py-12 text-center">
-                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#6f4a3c]"></div>
-                  <p className="mt-4 text-[#6f4a3c]/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                  <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-coffee"></div>
+                  <p className="mt-4 text-coffee/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
                     Loading coupons...
                   </p>
                 </div>
               ) : paginatedCoupons.length === 0 ? (
-                <p className="text-center py-12 text-[#6f4a3c]/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                <p className="text-center py-12 text-coffee/60" style={{ fontFamily: '"Poppins", sans-serif' }}>
                   No coupons yet. Create your first coupon!
                 </p>
               ) : (
                 <>
                   <div className="overflow-x-auto">
                     <table className="min-w-full">
-                      <thead className="bg-[#6f4a3c] text-white">
+                      <thead className="bg-coffee text-white">
                         <tr>
                           {deleteMode && (
                             <th className="px-4 py-3 text-left text-xs sm:text-sm font-semibold">
@@ -2075,17 +2075,17 @@ const Admin = () => {
                               </td>
                             )}
                             <td className="px-4 py-3">
-                              <div className="text-sm font-mono font-semibold text-[#6f4a3c]">
+                              <div className="text-sm font-mono font-semibold text-coffee">
                                 {coupon.code}
                               </div>
                             </td>
                             <td className="px-4 py-3">
-                              <div className="text-sm text-[#6f4a3c] capitalize">
+                              <div className="text-sm text-coffee capitalize">
                                 {coupon.discountType || "percentage"}
                               </div>
                             </td>
                             <td className="px-4 py-3">
-                              <div className="text-sm font-semibold text-[#6f4a3c]">
+                              <div className="text-sm font-semibold text-coffee">
                                 {coupon.discountType === "fixed" ? "AED" : ""} {coupon.discountValue || 0}
                                 {coupon.discountType === "percentage" ? "%" : ""}
                               </div>
@@ -2103,12 +2103,12 @@ const Admin = () => {
                               </button>
                             </td>
                             <td className="px-4 py-3">
-                              <div className="text-sm text-[#6f4a3c]">
+                              <div className="text-sm text-coffee">
                                 {coupon.usedCount || 0} / {coupon.usageLimit || "∞"}
                               </div>
                             </td>
                             <td className="px-4 py-3">
-                              <div className="text-sm text-[#6f4a3c]/70">
+                              <div className="text-sm text-coffee/70">
                                 {coupon.expiryDate?.toDate
                                   ? coupon.expiryDate.toDate().toLocaleDateString()
                                   : "No expiry"}
@@ -2117,7 +2117,7 @@ const Admin = () => {
                             <td className="px-4 py-3">
                               <button
                                 onClick={() => handleEditCoupon(coupon)}
-                                className="px-3 py-1 rounded-lg bg-[#6f4a3c] text-white text-xs font-semibold hover:bg-[#5a3b2f] transition-colors"
+                                className="px-3 py-1 rounded-lg bg-coffee text-white text-xs font-semibold hover:bg-[#5a3b2f] transition-colors"
                                 style={{ fontFamily: '"Poppins", sans-serif' }}
                               >
                                 Edit
@@ -2138,13 +2138,13 @@ const Admin = () => {
                     {/* Left: Items per page & showing info */}
                     <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
                       <div className="flex items-center gap-2">
-                        <label className="text-sm text-[#6f4a3c]/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="text-sm text-coffee/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Show:
                         </label>
                         <select
                           value={itemsPerPage.coupons}
                           onChange={(e) => handleItemsPerPageChange(e.target.value)}
-                          className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#6f4a3c]/20"
+                          className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-coffee/20"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         >
                           <option value="5">5</option>
@@ -2152,7 +2152,7 @@ const Admin = () => {
                           <option value="20">20</option>
                         </select>
                       </div>
-                      <div className="text-sm text-[#6f4a3c]/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <div className="text-sm text-coffee/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Showing {coupons.length === 0 ? 0 : (currentPage.coupons - 1) * itemsPerPage.coupons + 1} to {Math.min(currentPage.coupons * itemsPerPage.coupons, coupons.length)} of {coupons.length} coupons
                       </div>
                     </div>
@@ -2162,7 +2162,7 @@ const Admin = () => {
                       <button
                         onClick={() => setCurrentPage(prev => ({ ...prev, coupons: Math.max(1, prev.coupons - 1) }))}
                         disabled={currentPage.coupons === 1}
-                        className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Previous
@@ -2186,8 +2186,8 @@ const Admin = () => {
                               key={pageNum}
                               onClick={() => setCurrentPage(prev => ({ ...prev, coupons: pageNum }))}
                               className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${currentPage.coupons === pageNum
-                                  ? "bg-[#6f4a3c] text-white"
-                                  : "border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10"
+                                  ? "bg-coffee text-white"
+                                  : "border border-coffee/30 text-coffee hover:bg-coffee/10"
                                 }`}
                               style={{ fontFamily: '"Poppins", sans-serif' }}
                             >
@@ -2200,7 +2200,7 @@ const Admin = () => {
                       <button
                         onClick={() => setCurrentPage(prev => ({ ...prev, coupons: Math.min(totalPagesCoupons, prev.coupons + 1) }))}
                         disabled={currentPage.coupons === totalPagesCoupons}
-                        className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Next
@@ -2222,9 +2222,9 @@ const Admin = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#6f4a3c]/10">
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-coffee/10">
               {/* Header */}
-              <div className="bg-gradient-to-r from-[#6f4a3c] to-[#8b6254] p-6">
+              <div className="bg-linear-to-r from-coffee to-[#8b6254] p-6">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
                     <h2 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: '"Playfair Display", serif' }}>
@@ -2240,7 +2240,7 @@ const Admin = () => {
                         onClick={toggleDeleteMode}
                         className={`px-4 py-2 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 ${deleteMode
                             ? "bg-red-500 text-white hover:bg-red-600"
-                            : "bg-white/90 text-[#6f4a3c] hover:bg-white"
+                            : "bg-white/90 text-coffee hover:bg-white"
                           }`}
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
@@ -2249,7 +2249,7 @@ const Admin = () => {
                     )}
                     <button
                       onClick={() => setShowBlogForm(true)}
-                      className="px-6 py-3 bg-white text-[#6f4a3c] rounded-xl font-semibold hover:bg-cream transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                      className="px-6 py-3 bg-white text-coffee rounded-xl font-semibold hover:bg-cream transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                       style={{ fontFamily: '"Poppins", sans-serif' }}
                     >
                       + New Blog Post
@@ -2260,18 +2260,18 @@ const Admin = () => {
 
               {/* Delete Mode Controls */}
               {deleteMode && !loading.blogs && blogs.length > 0 && (
-                <div className="p-4 bg-cream/30 border-b border-[#6f4a3c]/20 flex flex-wrap items-center justify-between gap-3">
+                <div className="p-4 bg-cream/30 border-b border-coffee/20 flex flex-wrap items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
                     <button
                       onClick={selectAllItems}
-                      className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                      className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                       style={{ fontFamily: '"Poppins", sans-serif' }}
                     >
                       Select All
                     </button>
                     <button
                       onClick={deselectAllItems}
-                      className="px-3 py-2 rounded-lg text-sm border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10 transition-colors"
+                      className="px-3 py-2 rounded-lg text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
                       style={{ fontFamily: '"Poppins", sans-serif' }}
                     >
                       Deselect All
@@ -2293,7 +2293,7 @@ const Admin = () => {
               {/* Blog List */}
               {loading.blogs ? (
                 <div className="flex justify-center items-center py-20">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#6f4a3c]"></div>
+                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-coffee"></div>
                 </div>
               ) : errors.blogs ? (
                 <div className="p-6 text-center">
@@ -2302,14 +2302,14 @@ const Admin = () => {
               ) : blogs.length === 0 ? (
                 <div className="p-12 text-center">
                   <div className="text-6xl mb-4">📝</div>
-                  <p className="text-[#6f4a3c]/70 text-lg" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                  <p className="text-coffee/70 text-lg" style={{ fontFamily: '"Poppins", sans-serif' }}>
                     No blogs yet. Create your first blog post!
                   </p>
                 </div>
               ) : (
                 <div className="overflow-x-auto">
                   <table className="w-full">
-                    <thead className="bg-[#6f4a3c]/5">
+                    <thead className="bg-coffee/5">
                       <tr>
                         {deleteMode && (
                           <th className="px-4 py-3 text-center" style={{ fontFamily: '"Poppins", sans-serif' }}>
@@ -2327,28 +2327,28 @@ const Admin = () => {
                             />
                           </th>
                         )}
-                        <th className="px-4 py-3 text-left text-xs font-semibold text-[#6f4a3c] uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-coffee uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Title
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-semibold text-[#6f4a3c] uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-coffee uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Author
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-semibold text-[#6f4a3c] uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-coffee uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Category
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-semibold text-[#6f4a3c] uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-coffee uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Created
                         </th>
-                        <th className="px-4 py-3 text-left text-xs font-semibold text-[#6f4a3c] uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <th className="px-4 py-3 text-left text-xs font-semibold text-coffee uppercase tracking-wider" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Actions
                         </th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#6f4a3c]/10">
+                    <tbody className="divide-y divide-coffee/10">
                       {paginatedBlogs.map((blog) => (
                         <tr
                           key={blog.id}
-                          className={`hover:bg-[#6f4a3c]/5 transition-colors ${selectedItems.includes(blog.id) ? 'bg-blue-50 ring-2 ring-blue-500' : ''
+                          className={`hover:bg-coffee/5 transition-colors ${selectedItems.includes(blog.id) ? 'bg-blue-50 ring-2 ring-blue-500' : ''
                             }`}
                         >
                           {deleteMode && (
@@ -2371,34 +2371,34 @@ const Admin = () => {
                                 />
                               )}
                               <div>
-                                <div className="font-semibold text-[#6f4a3c] line-clamp-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                                <div className="font-semibold text-coffee line-clamp-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                                   {blog.title}
                                 </div>
-                                <div className="text-xs text-[#6f4a3c]/60 line-clamp-1" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                                <div className="text-xs text-coffee/60 line-clamp-1" style={{ fontFamily: '"Poppins", sans-serif' }}>
                                   {blog.excerpt}
                                 </div>
                               </div>
                             </div>
                           </td>
                           <td className="px-4 py-4">
-                            <div className="text-sm text-[#6f4a3c]" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                            <div className="text-sm text-coffee" style={{ fontFamily: '"Poppins", sans-serif' }}>
                               {blog.author || "Anonymous"}
                             </div>
                           </td>
                           <td className="px-4 py-4">
-                            <span className="px-2 py-1 bg-[#6f4a3c]/10 text-[#6f4a3c] text-xs rounded-full font-medium" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                            <span className="px-2 py-1 bg-coffee/10 text-coffee text-xs rounded-full font-medium" style={{ fontFamily: '"Poppins", sans-serif' }}>
                               {blog.category || "Uncategorized"}
                             </span>
                           </td>
                           <td className="px-4 py-4">
-                            <div className="text-sm text-[#6f4a3c]/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                            <div className="text-sm text-coffee/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
                               {blog.createdAt?.toDate?.()?.toLocaleDateString() || "N/A"}
                             </div>
                           </td>
                           <td className="px-4 py-4">
                             <button
                               onClick={() => handleEditBlog(blog)}
-                              className="px-3 py-1 rounded-lg bg-[#6f4a3c] text-white text-xs font-semibold hover:bg-[#5a3b2f] transition-colors"
+                              className="px-3 py-1 rounded-lg bg-coffee text-white text-xs font-semibold hover:bg-[#5a3b2f] transition-colors"
                               style={{ fontFamily: '"Poppins", sans-serif' }}
                             >
                               Edit
@@ -2417,7 +2417,7 @@ const Admin = () => {
                   <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
                     <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
                       <div className="flex items-center gap-2">
-                        <label className="text-sm text-[#6f4a3c]/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="text-sm text-coffee/70 whitespace-nowrap" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Show:
                         </label>
                         <select
@@ -2426,7 +2426,7 @@ const Admin = () => {
                             setItemsPerPage(prev => ({ ...prev, blogs: Number(e.target.value) }));
                             setCurrentPage(prev => ({ ...prev, blogs: 1 }));
                           }}
-                          className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#6f4a3c]/20"
+                          className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-coffee/20"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                         >
                           <option value="5">5</option>
@@ -2434,7 +2434,7 @@ const Admin = () => {
                           <option value="20">20</option>
                         </select>
                       </div>
-                      <div className="text-sm text-[#6f4a3c]/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <div className="text-sm text-coffee/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Showing {(currentPage.blogs - 1) * itemsPerPage.blogs + 1} to {Math.min(currentPage.blogs * itemsPerPage.blogs, blogs.length)} of {blogs.length} blogs
                       </div>
                     </div>
@@ -2443,7 +2443,7 @@ const Admin = () => {
                       <button
                         onClick={() => setCurrentPage(prev => ({ ...prev, blogs: Math.max(1, prev.blogs - 1) }))}
                         disabled={currentPage.blogs === 1}
-                        className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Previous
@@ -2467,8 +2467,8 @@ const Admin = () => {
                               key={pageNum}
                               onClick={() => setCurrentPage(prev => ({ ...prev, blogs: pageNum }))}
                               className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${currentPage.blogs === pageNum
-                                  ? "bg-[#6f4a3c] text-white"
-                                  : "border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c]/10"
+                                  ? "bg-coffee text-white"
+                                  : "border border-coffee/30 text-coffee hover:bg-coffee/10"
                                 }`}
                               style={{ fontFamily: '"Poppins", sans-serif' }}
                             >
@@ -2481,7 +2481,7 @@ const Admin = () => {
                       <button
                         onClick={() => setCurrentPage(prev => ({ ...prev, blogs: Math.min(totalPagesBlogs, prev.blogs + 1) }))}
                         disabled={currentPage.blogs === totalPagesBlogs}
-                        className="px-3 py-1.5 rounded-lg border border-[#6f4a3c]/30 text-[#6f4a3c] hover:bg-[#6f4a3c] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+                        className="px-3 py-1.5 rounded-lg border border-coffee/30 text-coffee hover:bg-coffee hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Next
@@ -2511,7 +2511,7 @@ const Admin = () => {
                 className="bg-cream rounded-2xl shadow-2xl max-w-4xl w-full my-8"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="sticky top-0 bg-gradient-to-r from-[#6f4a3c] to-[#8b6254] p-6 rounded-t-2xl">
+                <div className="sticky top-0 bg-linear-to-r from-coffee to-[#8b6254] p-6 rounded-t-2xl">
                   <div className="flex items-center justify-between">
                     <h3 className="text-2xl font-bold text-white" style={{ fontFamily: '"Playfair Display", serif' }}>
                       {editingBlog ? "Edit Blog Post" : "Create New Blog Post"}
@@ -2530,7 +2530,7 @@ const Admin = () => {
                 <div className="p-6 max-h-[calc(90vh-200px)] overflow-y-auto">
                   <form onSubmit={handleSaveBlog} className="space-y-6">
                     <div>
-                      <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Title *
                       </label>
                       <input
@@ -2539,17 +2539,17 @@ const Admin = () => {
                         value={blogForm.title}
                         onChange={handleBlogFormChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-[#6f4a3c]/20 rounded-lg focus:outline-none focus:border-[#6f4a3c] transition-colors text-lg"
+                        className="w-full px-4 py-3 border-2 border-coffee/20 rounded-lg focus:outline-none focus:border-coffee transition-colors text-lg"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                         placeholder="Enter blog title"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Content *
                       </label>
-                      <div className="border-2 border-[#6f4a3c]/20 rounded-lg overflow-hidden">
+                      <div className="border-2 border-coffee/20 rounded-lg overflow-hidden">
                         <ReactQuill
                           theme="snow"
                           value={blogForm.content}
@@ -2582,7 +2582,7 @@ const Admin = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Excerpt (Optional)
                       </label>
                       <textarea
@@ -2590,7 +2590,7 @@ const Admin = () => {
                         value={blogForm.excerpt}
                         onChange={handleBlogFormChange}
                         rows={3}
-                        className="w-full px-4 py-2 border-2 border-[#6f4a3c]/20 rounded-lg focus:outline-none focus:border-[#6f4a3c] transition-colors resize-vertical"
+                        className="w-full px-4 py-2 border-2 border-coffee/20 rounded-lg focus:outline-none focus:border-coffee transition-colors resize-vertical"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                         placeholder="Short description (auto-generated if empty)"
                       />
@@ -2598,7 +2598,7 @@ const Admin = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Author *
                         </label>
                         <input
@@ -2607,14 +2607,14 @@ const Admin = () => {
                           value={blogForm.author}
                           onChange={handleBlogFormChange}
                           required
-                          className="w-full px-4 py-2 border-2 border-[#6f4a3c]/20 rounded-lg focus:outline-none focus:border-[#6f4a3c] transition-colors"
+                          className="w-full px-4 py-2 border-2 border-coffee/20 rounded-lg focus:outline-none focus:border-coffee transition-colors"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                           placeholder="Author name"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                        <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                           Category *
                         </label>
                         <input
@@ -2623,7 +2623,7 @@ const Admin = () => {
                           value={blogForm.category}
                           onChange={handleBlogFormChange}
                           required
-                          className="w-full px-4 py-2 border-2 border-[#6f4a3c]/20 rounded-lg focus:outline-none focus:border-[#6f4a3c] transition-colors"
+                          className="w-full px-4 py-2 border-2 border-coffee/20 rounded-lg focus:outline-none focus:border-coffee transition-colors"
                           style={{ fontFamily: '"Poppins", sans-serif' }}
                           placeholder="e.g., Skin Care"
                         />
@@ -2631,7 +2631,7 @@ const Admin = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                      <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                         Featured Image URL *
                       </label>
                       <input
@@ -2640,7 +2640,7 @@ const Admin = () => {
                         value={blogForm.imageUrl}
                         onChange={handleBlogFormChange}
                         required
-                        className="w-full px-4 py-2 border-2 border-[#6f4a3c]/20 rounded-lg focus:outline-none focus:border-[#6f4a3c] transition-colors"
+                        className="w-full px-4 py-2 border-2 border-coffee/20 rounded-lg focus:outline-none focus:border-coffee transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                         placeholder="https://example.com/image.jpg"
                       />
@@ -2658,7 +2658,7 @@ const Admin = () => {
                       <button
                         type="submit"
                         disabled={isSavingBlog}
-                        className="flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-[#6f4a3c] to-[#8b6254] text-white font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                        className="flex-1 py-3 px-6 rounded-xl bg-linear-to-r from-coffee to-[#8b6254] text-white font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         {isSavingBlog ? "Saving..." : editingBlog ? "Update Blog" : "Publish Blog"}
@@ -2666,7 +2666,7 @@ const Admin = () => {
                       <button
                         type="button"
                         onClick={handleCancelBlogForm}
-                        className="px-6 py-3 rounded-xl border-2 border-[#6f4a3c]/30 text-[#6f4a3c] font-semibold hover:bg-[#6f4a3c]/5 transition-colors"
+                        className="px-6 py-3 rounded-xl border-2 border-coffee/30 text-coffee font-semibold hover:bg-coffee/5 transition-colors"
                         style={{ fontFamily: '"Poppins", sans-serif' }}
                       >
                         Cancel

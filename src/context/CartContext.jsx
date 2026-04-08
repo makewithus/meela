@@ -9,24 +9,24 @@ export const CartProvider = ({ children }) => {
 
   // Load cart from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem('meelaCart');
+    const savedCart = localStorage.getItem("meelaCart");
     if (savedCart) {
       try {
         setCartItems(JSON.parse(savedCart));
       } catch (e) {
-        console.error('Failed to load cart:', e);
+        console.error("Failed to load cart:", e);
       }
     }
   }, []);
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem('meelaCart', JSON.stringify(cartItems));
+    localStorage.setItem("meelaCart", JSON.stringify(cartItems));
   }, [cartItems]);
 
   const openBuyModal = () => setIsBuyModalOpen(true);
   const closeBuyModal = () => setIsBuyModalOpen(false);
-  
+
   const openCheckout = () => {
     setIsCheckoutOpen(true);
     closeBuyModal(); // Close buy modal when opening checkout
@@ -35,12 +35,12 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     setCartItems((prev) => {
-      const existingItem = prev.find(item => item.id === product.id);
+      const existingItem = prev.find((item) => item.id === product.id);
       if (existingItem) {
-        return prev.map(item =>
+        return prev.map((item) =>
           item.id === product.id
             ? { ...item, qty: item.qty + (product.qty || 1) }
-            : item
+            : item,
         );
       }
       return [...prev, { ...product, qty: product.qty || 1 }];
@@ -53,23 +53,23 @@ export const CartProvider = ({ children }) => {
       return;
     }
     setCartItems((prev) =>
-      prev.map(item => {
+      prev.map((item) => {
         if (item.id === productId) {
           // For meela-hair-oil, adjust price based on quantity
-          if (item.id === 'meela-hair-oil') {
-            // 1 bottle = AED 55, 2+ bottles = AED 47.50 each
-            const newPrice = qty === 1 ? 55 : 47.50;
+          if (item.id === "meela-hair-oil") {
+            // 1 bottle = AED 55, 2 bottles = AED 47.50 each, 3 bottles = AED 41.67 each
+            const newPrice = qty === 1 ? 55 : qty === 2 ? 47.5 : 41.67;
             return { ...item, qty: Math.max(1, qty), price: newPrice };
           }
           return { ...item, qty: Math.max(1, qty) };
         }
         return item;
-      })
+      }),
     );
   };
 
   const removeFromCart = (productId) => {
-    setCartItems((prev) => prev.filter(item => item.id !== productId));
+    setCartItems((prev) => prev.filter((item) => item.id !== productId));
   };
 
   const clearCart = () => setCartItems([]);
@@ -79,7 +79,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotalPrice = () => {
-    return cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    return cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
   };
 
   return (
