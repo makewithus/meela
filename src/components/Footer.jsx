@@ -73,10 +73,10 @@ const Footer = () => {
           <div className="flex gap-6 lg:gap-8 justify-center md:justify-start">
             {/* Sitemap */}
             <div>
-              <h3 className="text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+              <h3 className="text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                 Sitemap
               </h3>
-              <ul className="space-y-1 text-xs text-[#6f4a3c]/75" style={{ fontFamily: '"Poppins", sans-serif' }}>
+              <ul className="space-y-1 text-xs text-coffee/75" style={{ fontFamily: '"Poppins", sans-serif' }}>
                 <li>
                   <a 
                     href="#" 
@@ -84,7 +84,7 @@ const Footer = () => {
                       e.preventDefault();
                       scrollToSection('top');
                     }}
-                    className="hover:text-[#6f4a3c] transition-colors cursor-pointer"
+                    className="hover:text-coffee transition-colors cursor-pointer"
                   >
                     Home
                   </a>
@@ -96,7 +96,7 @@ const Footer = () => {
                       e.preventDefault();
                       scrollToSection('product');
                     }}
-                    className="hover:text-[#6f4a3c] transition-colors cursor-pointer"
+                    className="hover:text-coffee transition-colors cursor-pointer"
                   >
                     About
                   </a>
@@ -108,39 +108,39 @@ const Footer = () => {
                       e.preventDefault();
                       scrollToSection('contact');
                     }}
-                    className="hover:text-[#6f4a3c] transition-colors cursor-pointer"
+                    className="hover:text-coffee transition-colors cursor-pointer"
                   >
                     Contact
                   </a>
                 </li>
-                {/* <li><a href="#" className="hover:text-[#6f4a3c] transition-colors">Products</a></li>
-                <li><a href="#" className="hover:text-[#6f4a3c] transition-colors">Blogs</a></li> */}
+                {/* <li><a href="#" className="hover:text-coffee transition-colors">Products</a></li>
+                <li><a href="#" className="hover:text-coffee transition-colors">Blogs</a></li> */}
               </ul>
             </div>
 
             {/* Shop */}
             {/* <div>
-              <h3 className="text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+              <h3 className="text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                 Shop
               </h3>
-              <ul className="space-y-1 text-xs text-[#6f4a3c]/75" style={{ fontFamily: '"Poppins", sans-serif' }}>
-                <li><a href="#" className="hover:text-[#6f4a3c] transition-colors">Skincare</a></li>
-                <li><a href="#" className="hover:text-[#6f4a3c] transition-colors">Haircare</a></li>
-                <li><a href="#" className="hover:text-[#6f4a3c] transition-colors">Bodycare</a></li>
+              <ul className="space-y-1 text-xs text-coffee/75" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                <li><a href="#" className="hover:text-coffee transition-colors">Skincare</a></li>
+                <li><a href="#" className="hover:text-coffee transition-colors">Haircare</a></li>
+                <li><a href="#" className="hover:text-coffee transition-colors">Bodycare</a></li>
               </ul>
             </div> */}
 
             {/* Connect */}
             <div>
-              <h3 className="text-sm font-semibold text-[#6f4a3c] mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+              <h3 className="text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
                 Connect with Us
               </h3>
-              <ul className="space-y-1 text-xs text-[#6f4a3c]/75" style={{ fontFamily: '"Poppins", sans-serif' }}>
-                <li><a href="" className="hover:text-[#6f4a3c] transition-colors">WhatsApp</a></li>
-                <li><a href="mailto:meelaherbals@gmail.com" className="hover:text-[#6f4a3c] transition-colors">Email</a></li>
-                <li><a href="https://www.instagram.com/p/DPwTUARkig_/?igsh=MXh0YmQwY2ZsYTFiZA==" className="hover:text-[#6f4a3c] transition-colors">Instagram</a></li>
-                <li><a href="" className="hover:text-[#6f4a3c] transition-colors">Facebook</a></li>
-                <li><a href="" className="hover:text-[#6f4a3c] transition-colors">YouTube</a></li>
+              <ul className="space-y-1 text-xs text-coffee/75" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                <li><a href="" className="hover:text-coffee transition-colors">WhatsApp</a></li>
+                <li><a href="mailto:meelaherbals@gmail.com" className="hover:text-coffee transition-colors">Email</a></li>
+                <li><a href="https://www.instagram.com/p/DPwTUARkig_/?igsh=MXh0YmQwY2ZsYTFiZA==" className="hover:text-coffee transition-colors">Instagram</a></li>
+                <li><a href="" className="hover:text-coffee transition-colors">Facebook</a></li>
+                <li><a href="" className="hover:text-coffee transition-colors">YouTube</a></li>
               </ul>
             </div>
           </div>
@@ -152,7 +152,7 @@ const Footer = () => {
               alt="Meela Logo"
               className="h-28 md:h-28 mb-1"
             />
-            <p className="text-xs italic text-[#6f4a3c]/70 mb-4" style={{ fontFamily: '"Playfair Display", serif' }}>
+            <p className="text-xs italic text-coffee/70 mb-4" style={{ fontFamily: '"Playfair Display", serif' }}>
               Pure. Natural. Radiant
             </p>
 
@@ -165,9 +165,9 @@ const Footer = () => {
           </div>
 
           {/* RIGHT COLUMN - Company Info */}
-          <div className="space-y-4 text-[12px] md:text-xs text-[#6f4a3c]/75 leading-relaxed lg:text-right" style={{ fontFamily: '"Poppins", sans-serif' }}>
+          <div className="space-y-4 text-[12px] md:text-xs text-coffee/75 leading-relaxed lg:text-right" style={{ fontFamily: '"Poppins", sans-serif' }}>
             {/* <div>
-              <p className="font-semibold text-[#6f4a3c] mb-1.5">
+              <p className="font-semibold text-coffee mb-1.5">
                 Manufactured & Marketed By
               </p>
               <p>Herbland Cosmetics and Manufacturer</p>
@@ -177,7 +177,7 @@ const Footer = () => {
             </div> */}
 
             <div>
-              <p className="font-semibold text-[#6f4a3c] mb-1.5">
+              <p className="font-semibold text-coffee mb-1.5">
                 Imported & Distributed By
               </p>
               <p>Noor Al Khair General Trading LLC - S.P.C</p>
@@ -192,14 +192,14 @@ const Footer = () => {
         {/* COPYRIGHT */}
 
       </div>
-        <div className="mt-8 pt-5 border-t border-[#6f4a3c]/20 text-center">
-          <p className="text-[10px] md:text-xs text-[#6f4a3c]/60">
+        <div className="mt-8 pt-5 border-t border-coffee/20 text-center">
+          <p className="text-[10px] md:text-xs text-coffee/60">
             © 2025 MEELA, Herbland Cosmetics and Manufacturers. All rights reserved.
-            Developed by <a href="https://makewithus.in" target="_blank">MAKEWITHUS</a>
+            Developed by <a href="https://makewithus.in" target="_blank">MAKEWITHUS</a> & <a href="https://ITIz.org" target="_blank">ITIz</a>
 
           </p>
 
-          <div className="flex justify-center gap-3 mt-2 text-[10px] md:text-xs text-[#6f4a3c]/60">
+          <div className="flex justify-center gap-3 mt-2 text-[10px] md:text-xs text-coffee/60">
             Privacy Policy
             <span>|</span>
             Refund Policy

@@ -46,6 +46,7 @@ const Admin = () => {
     expiryDate: "",
     usageLimit: "",
     usedCount: 0,
+    applicableTo: "all",
   });
   const [isSavingCoupon, setIsSavingCoupon] = useState(false);
 
@@ -450,6 +451,7 @@ const Admin = () => {
         discountValue: Number(couponForm.discountValue),
         isActive: couponForm.isActive,
         usedCount: Number(couponForm.usedCount) || 0,
+        applicableTo: couponForm.applicableTo || "all",
         createdAt: editingCoupon ? undefined : Timestamp.now(),
         updatedAt: Timestamp.now(),
       };
@@ -484,6 +486,7 @@ const Admin = () => {
         expiryDate: "",
         usageLimit: "",
         usedCount: 0,
+        applicableTo: "all",
       });
       setShowCouponForm(false);
       setEditingCoupon(null);
@@ -511,6 +514,7 @@ const Admin = () => {
       expiryDate: coupon.expiryDate?.toDate ? coupon.expiryDate.toDate().toISOString().split('T')[0] : "",
       usageLimit: coupon.usageLimit || "",
       usedCount: coupon.usedCount || 0,
+      applicableTo: coupon.applicableTo || "all",
     });
     setShowCouponForm(true);
   };
@@ -526,6 +530,7 @@ const Admin = () => {
       expiryDate: "",
       usageLimit: "",
       usedCount: 0,
+      applicableTo: "all",
     });
   };
 
@@ -1919,6 +1924,23 @@ const Admin = () => {
                         >
                           <option value="percentage">Percentage (%)</option>
                           <option value="fixed">Fixed Amount (AED)</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-coffee mb-2" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                          Applicable To *
+                        </label>
+                        <select
+                          name="applicableTo"
+                          value={couponForm.applicableTo}
+                          onChange={handleCouponFormChange}
+                          required
+                          className="w-full px-4 py-2 rounded-lg border-2 border-coffee/20 focus:border-coffee outline-none text-sm"
+                          style={{ fontFamily: '"Poppins", sans-serif' }}
+                        >
+                          <option value="all">All Orders</option>
+                          <option value="buy2">Buy 2 Only</option>
+                          <option value="buy3">Buy 3 Only</option>
                         </select>
                       </div>
                       <div>
