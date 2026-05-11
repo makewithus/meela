@@ -356,6 +356,143 @@ const Admin = () => {
     }
   };
 
+  const handlePrintOrder = (order) => {
+    const escapeHtml = (value) =>
+      String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+
+    const createdAt = order.createdAt?.toDate ? order.createdAt.toDate() : null;
+    const currency = order.pricing?.currency || "AED";
+    const address = order.deliveryAddress || {};
+    const addressLines = [address.name, address.landmark1, address.landmark2].filter(Boolean);
+
+    const itemsRows = (order.items || []).map((item) => {
+      const quantity = item.quantity ?? item.qty ?? 0;
+      const unitPrice = Number(item.price || 0);
+      const subtotal = Number(item.subtotal || unitPrice * quantity);
+      return `
+        <tr>
+          <td>${escapeHtml(item.name || "Item")}</td>
+          <td class="right">${escapeHtml(quantity)}</td>
+          <td class="right">${currency} ${subtotal.toFixed(2)}</td>
+        </tr>
+      `;
+    }).join("");
+
+    const html = `
+      <!doctype html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+          <title>Order ${escapeHtml(order.id)}</title>
+          <style>
+            * { box-sizing: border-box; }
+            body { font-family: Arial, sans-serif; color: #2d2d2d; margin: 24px; }
+            h1, h2, h3 { margin: 0 0 8px; }
+            .muted { color: #666; font-size: 12px; }
+            .section { margin-top: 20px; }
+            .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+            .card { border: 1px solid #ddd; border-radius: 8px; padding: 12px; }
+            table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+            th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; font-size: 13px; }
+            th { background: #f7f3ee; }
+            .right { text-align: right; }
+            .totals { margin-top: 8px; }
+            .totals div { display: flex; justify-content: space-between; padding: 2px 0; }
+            .totals .grand { font-weight: bold; font-size: 14px; }
+          </style>
+        </head>
+        <body>
+          <h1>Order Summary</h1>
+          <div class="muted">Order ID: ${escapeHtml(order.id)}</div>
+          <div class="muted">Date: ${escapeHtml(createdAt ? createdAt.toLocaleString() : "N/A")}</div>
+          <div class="muted">Status: ${escapeHtml(order.status || "Pending")}</div>
+
+          <div class="section grid">
+            <div class="card">
+              <h3>Delivery Address</h3>
+              ${addressLines.map(line => `<div>${escapeHtml(line)}</div>`).join("") || "<div>N/A</div>"}
+              <div class="muted">Phone: ${escapeHtml(address.phone || "N/A")}</div>
+              <div class="muted">Email: ${escapeHtml(address.email || "N/A")}</div>
+            </div>
+            <div class="card">
+              <h3>Order Details</h3>
+              <div class="muted">Items: ${escapeHtml(order.totalItems || order.items?.length || 0)}</div>
+              <div class="muted">Currency: ${escapeHtml(currency)}</div>
+              ${order.pricing?.appliedCoupon?.code ? `<div class="muted">Coupon: ${escapeHtml(order.pricing.appliedCoupon.code)}</div>` : ""}
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>Items</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th class="right">Qty</th>
+                  <th class="right">Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${itemsRows || "<tr><td colspan=\"3\">No items</td></tr>"}
+              </tbody>
+            </table>
+            <div class="totals">
+              <div><span>Subtotal</span><span>${currency} ${(order.pricing?.subtotal || 0).toFixed(2)}</span></div>
+              ${order.pricing?.vatAmount ? `<div><span>VAT (5%)</span><span>${currency} ${order.pricing.vatAmount.toFixed(2)}</span></div>` : ""}
+              ${order.pricing?.discount ? `<div><span>Discount</span><span>-${currency} ${order.pricing.discount.toFixed(2)}</span></div>` : ""}
+              <div class="grand"><span>Total</span><span>${currency} ${(order.pricing?.total || order.total || 0).toFixed(2)}</span></div>
+            </div>
+          </div>
+
+          <script>
+            window.onload = () => {
+              window.print();
+            };
+          </script>
+        </body>
+      </html>
+    `;
+
+    const iframe = document.createElement("iframe");
+    iframe.style.position = "fixed";
+    iframe.style.right = "0";
+    iframe.style.bottom = "0";
+    iframe.style.width = "0";
+    iframe.style.height = "0";
+    iframe.style.border = "0";
+    iframe.setAttribute("aria-hidden", "true");
+    document.body.appendChild(iframe);
+
+    const frameDoc = iframe.contentDocument || iframe.contentWindow?.document;
+    if (!frameDoc) {
+      alert("Unable to open print view. Please try again.");
+      document.body.removeChild(iframe);
+      return;
+    }
+
+    frameDoc.open();
+    frameDoc.write(html);
+    frameDoc.close();
+
+    iframe.onload = () => {
+      const frameWindow = iframe.contentWindow;
+      if (!frameWindow) {
+        document.body.removeChild(iframe);
+        return;
+      }
+      frameWindow.focus();
+      frameWindow.print();
+      setTimeout(() => {
+        document.body.removeChild(iframe);
+      }, 1000);
+    };
+  };
+
   const toggleDeleteMode = () => {
     setDeleteMode(!deleteMode);
     setSelectedItems([]);
@@ -634,24 +771,6 @@ const Admin = () => {
       category: "",
       imageUrl: "",
     });
-  };
-
-  const handleDeleteBlog = async (blogId) => {
-    if (!window.confirm("Are you sure you want to delete this blog? This action cannot be undone.")) {
-      return;
-    }
-
-    if (!db) return;
-    try {
-      await deleteDoc(doc(db, "blogs", blogId));
-    } catch (error) {
-      console.error("Error deleting blog:", error);
-      let errorMessage = "Failed to delete blog.";
-      if (error.code === "permission-denied" || error.code === 7) {
-        errorMessage = "Permission denied. Please update Firestore security rules to allow delete access to 'blogs' collection.";
-      }
-      alert(errorMessage);
-    }
   };
 
   const getStatusColor = (status) => {
@@ -1206,6 +1325,21 @@ const Admin = () => {
                           {expandedOrder === order.id && (
                             <tr>
                               <td colSpan={deleteMode ? "7" : "6"} className="px-4 py-4 sm:px-6 sm:py-6 bg-cream/50">
+                                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                                  <div className="text-xs sm:text-sm text-coffee/70" style={{ fontFamily: '"Poppins", sans-serif' }}>
+                                    Order ID: <span className="font-mono text-coffee">{order.id}</span>
+                                  </div>
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      handlePrintOrder(order);
+                                    }}
+                                    className="px-3 py-2 rounded-lg text-xs sm:text-sm border border-coffee/30 text-coffee hover:bg-coffee/10 transition-colors"
+                                    style={{ fontFamily: '"Poppins", sans-serif' }}
+                                  >
+                                    Print order
+                                  </button>
+                                </div>
                                 <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                                   {/* Delivery Address */}
                                   <div>
